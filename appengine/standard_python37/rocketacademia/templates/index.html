@@ -1,18 +1,445 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Datastore and Firebase Auth Example</title>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Rocket Academia</title>
+
+  <!-- Font Awesome Icons -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='all.min.css') }}">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='magnific-popup.css') }}">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='creative.min.css') }}">
+
+  <style>
+      .masthead2 {
+        padding-top: 10rem;
+        padding-bottom: calc(10rem - 72px);
+        background: linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url({{ url_for('static', filename='LOGO_ROCKET_FONDO.jpg') }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+  .divisor_seccion_1 {
+      background: url({{ url_for('static', filename='seccion_1.png') }});
+  }
+
+  .divisor_seccion_2 {
+    background: url({{ url_for('static', filename='seccion_2.png') }});
+  }
+
+  .divisor {
+    padding-top: 12%;
+    padding-bottom: calc(10rem - 72px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .texto_general {
+    font-family: "Montserrat", Sans-serif;
+  }
+
+  .elementor-heading-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 0.9em;
+    letter-spacing: 2.5px;
+  }
+
+  .subtitulo{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    line-height: 30px;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .descripcion{
+    font-size: 1.4rem;
+  }
+
+  .titulo_seccion{
+    font-size: 4rem;
+  }
+
+  .page-section-local {
+    padding: 3rem 0 !important;
+  }
+
+  .img-datos{
+    padding: 2%;
+  }
+
+  .titulo_seccion_1{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #126087 !important;
+  }
+
+  .sub-titulo-seccion_1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f4623a !important;
+  }
+
+  .fuente_propia{
+    font-family: "Merriweather Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+  </style>
+
 </head>
-<body>
 
-  <h1>Datastore and Firebase Auth Example</h1>
+<body id="page-top">
 
-  <h2>Last 10 visits</h2>
-  {% for time in times %}
-    <p>{{ time }}</p>
-  {% endfor %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand js-scroll-trigger texto_general" href="#page-top">Rocket Academia
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse texto_general" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Conocenos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Portafolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contactanos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Masthead -->
+  <header class="masthead2">
+    <br>
+    <br>
+    <div class="row h-100 align-items-center justify-content-center">
+    <img style="    max-width: 15%;padding: 0%;position: absolute;left: 12px;top: 48px;" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_TEST.png') }}" alt="">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-lg-8 align-self-end">
+          <h1 class="elementor-heading-title text-white texto_general">Academia de <br>Robotica para <br>Niños</h1>
+          <h1 class="text-white subtitulo texto_general">Aprende y divierte con nosotros</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-end">
+          <p class="text-white texto_general descripcion">Potenciamos la creatividad del estudiante preparandolo para su futuro. Le brindamos la oportunidad de aprender matemáticas implementando robótica como herramienta de apredizaje.</P>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="page-section-local" id="about">
+    <div class="container-fluid">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 class="text-center texto_general text-muted titulo_seccion_1">¿Porqué Rocket Academia?</h1>
+      <br>
+      <h3 class="text-center sub-titulo-seccion_1">Dejame contarte una historia . . .</h3>
+      <hr class="divider my-4">
+      <br>
+      <br>
+      <br>
+      <div class="container p-0">
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-sm-6">
+              <img class="img-fluid img-datos" src="{{ url_for('static', filename='dato_seccion_1.png') }}" alt="">
+          </div>
+          <div class="col-lg-4 col-sm-6">
+              <img class="img-fluid img-datos" src="{{ url_for('static', filename='dato_seccion_3.png') }}" alt="">
+          </div>
+          <div class="col-lg-4 col-sm-6">
+              <img class="img-fluid img-datos" src="{{ url_for('static', filename='dato_seccion_2.png') }}" alt="">
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h4 style="font-size: 4rem; font-weight: 700; color: #f4623a!important;" class="text-center">Hablemos de la solución . . .</h4>
+    </div>
+  </section>
+  <section class="page-section divisor divisor_seccion_1">
+  </section>
+
+
+  <section class="page-section" id="services">
+    <div class="container">
+      <h2 class="text-center texto_general text-muted titulo_seccion_1">Las Matemáticas dejaran de ser aburridas</h2>
+      <br>
+      <h3 class="text-center sub-titulo-seccion_1">Aprende y diviertete con nosotros . . .</h3>
+      <hr class="divider my-4">
+      <br>
+      <br>
+      <div class="row no-gutters">
+        <div class="col-lg-9 col-sm-9">
+          <h3 class="" style="line-height: 3.5rem;">
+            Dentro del aula los estudiantes necesitan saber que lo que están aprendiendo tiene significado y utilidad.
+            Para elevar el interesante y sepan que vale la pena saberlo.
+            La conexión entre lo que están haciendo y el mundo real genera interés y el nivel de compromiso aumentan naturalmente.</h3>
+        </div>
+        <div class="col-lg-3 col-sm-3">
+            <img style="max-width: 80%;" class="img-fluid img-datos" src="{{ url_for('static', filename='seccion_2_parrafo.png') }}" alt="">
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="container p-0">
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-sm-4">
+              <img class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_OFICIAL.png') }}" alt="">
+          </div>
+          <div class="col-lg-8 col-sm-8">
+              <h3 style="line-height: 3.5rem;" class="text-center mt-0">
+                Nos centramos en desarrollar de forma <span style="text-transform: uppercase; font-weight: bold;">divertida</span> las habilidades necesarias
+                para prosperar en la fuerza laboral del mañana.
+                <br>
+                <br>
+                Potenciando el pensamiento analítico, la innovación y la solución de problemas reales <span style="text-transform: uppercase; font-weight: bold;">a traves de</span>:
+              </h3>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img style="max-width: 64%;" class="img-fluid img-datos" src="{{ url_for('static', filename='ciencia.png') }}" alt="">
+            <h2 style="color: #126087 !important;font-weight: bold;">Ciencia</h2>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img style="max-width: 100%;" class="img-fluid img-datos" src="{{ url_for('static', filename='matematica.png') }}" alt="">
+            <h2 style="color: #126087 !important;font-weight: bold;">Matemática</h2>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img style="max-width: 64%;" class="img-fluid img-datos" src="{{ url_for('static', filename='ingenieria.png') }}" alt="">
+            <h2 style="color: #126087 !important;font-weight: bold;">Ingeniería</h2>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <img style="max-width: 64%;" class="img-fluid img-datos" src="{{ url_for('static', filename='tecnologia.png') }}" alt="">
+            <h2 style="color: #126087 !important;font-weight: bold;">Tecnología</h2>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <h4 style="font-size: 4rem; font-weight: 700; color: #f4623a!important;" class="text-center">Cómo lo hacemos . . .</h4>
+    </div>
+  </section>
+
+  <section class="page-section divisor divisor_seccion_2">
+  </section>
+
+  <!-- Services Section -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <h2 class="text-center texto_general text-muted titulo_seccion_1">La fuerza laboral de 2030 está en la escula hoy.</h2>
+      <br>
+      <h3 class="text-center sub-titulo-seccion_1">Los estudiantes desarrollan aplicaciones del mundo real a través de actividades y desafíos prácticos</h3>
+      <hr class="divider my-4">
+
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <h3 style="color: #126087 !important;font-weight: bold;" class="h4 mb-2">Sturdy Themes</h3>
+            <p class="text-muted mb-0 fuente_propia">Our themes are updated regularly to keep them bug free!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <h3 class="h4 mb-2">Up to Date</h3>
+            <p class="text-muted mb-0 fuente_propia">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <h3 class="h4 mb-2">Ready to Publish</h3>
+            <p class="text-muted mb-0 fuente_propia">You can use this design as is, or you can make changes!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <h3 class="h4 mb-2">Made with Love</h3>
+            <p class="text-muted mb-0 fuente_propia">Is it really open source if it's not made with love?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box"  href="{{ url_for('static', filename='f1.jpg') }}">
+            <img class="img-fluid" src="{{ url_for('static', filename='1.jpg') }}" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="{{ url_for('static', filename='f2.jpg') }}">
+            <img class="img-fluid" src="{{ url_for('static', filename='2.jpg') }}" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="{{ url_for('static', filename='f3.jpg') }}">
+            <img class="img-fluid" src="{{ url_for('static', filename='3.png') }}" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="{{ url_for('static', filename='f4.jpg') }}">
+            <img class="img-fluid" src="{{ url_for('static', filename='4.jpg') }}" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="{{ url_for('static', filename='f5.jpg') }}">
+            <img class="img-fluid" src="{{ url_for('static', filename='5.jpg') }}" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="{{ url_for('static', filename='6.jpg') }}">
+            <img class="img-fluid" src="{{ url_for('static', filename='6.png') }}" alt="">
+            <div class="portfolio-box-caption p-3">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>6265-3105</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:academiarocket@gmail.com">academiarocket@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{ url_for('static', filename='jquery.easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='jquery.magnific-popup.min.js') }}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='creative.min.js') }}"></script>
 
 </body>
+
 </html>
