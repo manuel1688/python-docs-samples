@@ -42,6 +42,11 @@
     background: url({{ url_for('static', filename='seccion_2.png') }});
   }
 
+  .divisor_seccion_6 {
+    height: 60%;
+    background: url({{ url_for('static', filename='separador_seccion_6.png') }});
+  }
+
   .divisor {
     padding-top: 12%;
     padding-bottom: calc(10rem - 72px);
@@ -102,6 +107,16 @@
   .fuente_propia{
     font-family: "Merriweather Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   }
+
+  .negrita_mayuscula{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .table-bordered td, .table-bordered th {
+    border: 2px solid #126087 !important;
+  }
+
   </style>
 
 </head>
@@ -211,7 +226,7 @@
       <div class="row no-gutters">
         <div class="col-lg-9 col-sm-9">
           <h3 class="" style="line-height: 3.5rem;">
-            Dentro del aula los estudiantes necesitan saber que lo que están aprendiendo tiene significado y utilidad.
+            En el aula los estudiantes necesitan saber que lo que están aprendiendo tiene <span class="negrita_mayuscula">significado y utilidad</span>.
             Para elevar el interesante y sepan que vale la pena saberlo.
             La conexión entre lo que están haciendo y el mundo real genera interés y el nivel de compromiso aumentan naturalmente.</h3>
         </div>
@@ -276,39 +291,51 @@
 
   <!-- Services Section -->
   <section class="page-section" id="services">
-    <div class="container">
-      <h2 class="text-center texto_general text-muted titulo_seccion_1">La fuerza laboral de 2030 está en la escula hoy.</h2>
-      <br>
-      <h3 class="text-center sub-titulo-seccion_1">Los estudiantes desarrollan aplicaciones del mundo real a través de actividades y desafíos prácticos</h3>
-      <hr class="divider my-4">
+      <div class="container">
+        <h2 class="text-center texto_general text-muted titulo_seccion_1">La fuerza laboral de 2030 está en la escula hoy</h2>
+        <br>
+        <h3 class="text-center sub-titulo-seccion_1">...</h3>
+        <hr class="divider my-4">
+        <div class="row no-gutters">
+          <div class="col-lg-12 col-sm-12">
+            <h3 style="line-height: 3.5rem;" class="text-center mt-0">
+              Los estudiantes desarrollan aplicaciones del mundo real a través
+              de actividades y desafíos prácticos; preparando a los estudiantes para un mercado
+              laboral pues son muchas las habilidades requeridas en un mundo donde la tecnología avanza a un ritmo
+              que es más rápido de lo que cualquiera puede seguir.
+            </h3>
+          </div>
 
-
+      </div>
       <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
+        <div class="col-lg-4 col-md-6 text-center">
           <div class="mt-5">
-            <h3 style="color: #126087 !important;font-weight: bold;" class="h4 mb-2">Sturdy Themes</h3>
-            <p class="text-muted mb-0 fuente_propia">Our themes are updated regularly to keep them bug free!</p>
+            <h2 style="color: #126087 !important;font-weight: bold;">Desarrollo personal</h2>
+            <p style="text-align: justify;font-size: 1.3rem;" class="fuente_propia">
+              Practican el pensamiento sistémico, tanto para el desarrollo personal y como la relación
+              con otras personas. Trabajando como parte de un equipo de robótica.</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 text-center">
+        <div class="col-lg-4 col-md-6 text-center">
           <div class="mt-5">
-            <h3 class="h4 mb-2">Up to Date</h3>
-            <p class="text-muted mb-0 fuente_propia">All dependencies are kept current to keep things fresh.</p>
+            <h2 style="color: #126087 !important;font-weight: bold;">Competencia</h2>
+            <p style="text-align: justify;font-size: 1.3rem;" class="fuente_propia">
+              Ya sea en competición o en el aula aprenderán a incorporar sus valores e ideas, así
+              como las de los demás para la resolución de problemas.</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 text-center">
+        <div class="col-lg-4 col-md-6 text-center">
           <div class="mt-5">
-            <h3 class="h4 mb-2">Ready to Publish</h3>
-            <p class="text-muted mb-0 fuente_propia">You can use this design as is, or you can make changes!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <h3 class="h4 mb-2">Made with Love</h3>
-            <p class="text-muted mb-0 fuente_propia">Is it really open source if it's not made with love?</p>
+            <h2 style="color: #126087 !important;font-weight: bold;">Diseño de ingeniería</h2>
+            <p style="text-align: justify; font-size: 1.3rem;" class="fuente_propia">
+              Cuando los estudiantes eligen engranajes, motores, conectan cables y escriben
+              programas ven sus lecciones en el aula sobre ciencias y matemáticas, electricidad,
+              diseño de ingeniería e incluso ortografía y lenguaje.</p>
           </div>
         </div>
       </div>
+      <br>
+      <h4 style="font-size: 4rem; font-weight: 700; color: #f4623a!important;" class="text-center">Demos un vistazo . . .</h4>
     </div>
   </section>
 
@@ -398,22 +425,101 @@
     </div>
   </section>
 
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+  <section class="page-section divisor divisor_seccion_6">
+  </section>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <section id="academia">
+    <div class="container">
+
+      <h2 class="text-center texto_general text-muted titulo_seccion_1">Clasificación de acuerdo a las edades</h2>
+      <br>
+      <h3 class="text-center sub-titulo-seccion_1">El aprendizaje es continuo . . .</h3>
+      <hr class="divider my-4">
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 col-sm-6 text-center" style="padding:2%">
+            <img class="img-fluid" style="width:60%" src="{{ url_for('static', filename='9_10_anos.png') }}" alt="">
+            <div class="">
+              <br>
+              <p style="text-align: justify; font-size: 1.2rem; line-height: 2.3rem;" class="fuente_propia">
+                Exploraremos la importancia que ha tomado la robótica en diferentes sectores de la sociedad,
+                definiremos los conceptos útiles para luego adentrarnos en el <span style="text-transform: uppercase; font-weight: bold;">desarrollo físico de un robot</span>
+                donde se examinarán sus partes y como construirlas. Finalmente se expondrán los diferentes mecanismos de movilización de un
+                robot para concluir con el <span style="text-transform: uppercase; font-weight: bold;"> desarrollo de un robot móvil</span>.
+              </p>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6 text-center" style="padding:2%">
+            <img class="img-fluid" style="width:60%" src="{{ url_for('static', filename='11_12_anos.png') }}" alt="">
+              <div class="">
+                <br>
+                <p style="text-align: justify; font-size: 1.2rem; line-height: 2.3rem;" class="fuente_propia">
+                  La importancia de un robot viene por su capacidad de tomar desiciones
+                  de forma automática y sin la necesidad de estar controlados por una persona, en esta nivel enseñaremos
+                  como hacer que robots toman desiciones automativas en relación a lo que pasa en su entorno.
+                  Al finalizar esta sección los estudiantes serán capaz de programar un robot para
+                  realizar tareas de forma automática.
+                </p>
+              </div>
+        </div>
+        </div>
+
+        <div class="col-lg-12 col-sm-12 text-center" style="padding:2%">
+          <h1>Detalle sobre nuestros niveles de estudio</h1>
+        </div>
+
+        <table class="table table-bordered fuente_propia">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center" style="width:15%;"><span style="text-transform: uppercase; font-weight: bold; color: #f4623a !important;">Edad</span></th>
+              <th scope="col" class="text-center"><span style="text-transform: uppercase; font-weight: bold; color: #f4623a !important;">Nivel 1</span></th>
+              <th scope="col" class="text-center"><span style="text-transform: uppercase; font-weight: bold; color: #f4623a !important;">Nivel 2</span></th>
+              <th scope="col" class="text-center"><span style="text-transform: uppercase; font-weight: bold; color: #f4623a !important;">Nivel 3</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-center"><span style="text-transform: uppercase; font-weight: bold;">9 y 10 años</span></th>
+              <td style="color: #126087;font-weight: bold;">INTRODUCCIÓN AL MUNDO DE LA ROBÓTICA</td>
+              <td style="color: #126087;font-weight: bold;">EL CUERPO DE UN ROBOT</td>
+              <td style="color: #126087;font-weight: bold;">HACER QUE UN ROBOT SE MUEVA</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><span style="text-transform: uppercase; font-weight: bold;">11 y 12 años</span></th>
+              <td style="color: #126087;font-weight: bold;">CÓMO LOS ROBOTS HACEN LAS COSAS</td>
+              <td style="color: #126087;font-weight: bold;">CÓMO LOS ROBOTS SABEN LO QUE ESTÁ PASANDO</td>
+              <td style="color: #126087;font-weight: bold;">CÓMO PIENSAN LOS ROBOTS</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="col-lg-12 col-sm-12 text-center" style="padding:2%">
+          <br>
+          <p style="text-align: justify; font-size: 1.2rem; line-height: 2.3rem;" class="fuente_propia">
+          Cada nivel tiene una duración de <span style="text-transform: uppercase; font-weight: bold;">3 meses</span>
+          </p>
+        </div>
+
     </div>
   </section>
+
+
 
   <!-- Contact Section -->
   <section class="page-section" id="contact">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <h2 class="mt-0">Contactanos</h2>
           <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          <p class="text-muted mb-5">Listo ....</p>
         </div>
       </div>
       <div class="row">

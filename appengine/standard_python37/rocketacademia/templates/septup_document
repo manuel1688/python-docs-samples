@@ -1,0 +1,10 @@
+Create an isolated Python environment in a directory external to your project and activate it:
+ python3 -m venv env
+ source env/bin/activate
+Navigate to your project directory and install dependencies:
+ cd YOUR_PROJECT
+ pip install  -r requirements.txt
+Run the application:
+ python main.py
+In your web browser, enter the following address:
+ http://localhost:8080
