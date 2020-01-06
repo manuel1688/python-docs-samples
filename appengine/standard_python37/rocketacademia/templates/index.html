@@ -47,6 +47,10 @@
     background: url({{ url_for('static', filename='separador_seccion_6.png') }});
   }
 
+  .divisor_seccion_7 {
+    background: url({{ url_for('static', filename='separador_seccion_7.png') }});
+  }
+
   .divisor {
     padding-top: 12%;
     padding-bottom: calc(10rem - 72px);
@@ -121,6 +125,101 @@
     color: black !important;
   }
 
+  @media only screen and (max-width: 600px){
+    #imagen_logo{
+      max-width: 30%;
+      padding: 0%;
+      position: absolute;
+      left: 12px;
+      top: 78px;
+    }
+  }
+
+  @media only screen and (max-width: 991px)  and (min-width: 600px) {
+    #imagen_logo{
+      max-width: 22%;
+      padding: 0%;
+      position: absolute;
+      left: 12px;
+      top: 78px;
+    }
+  }
+
+  @media only screen and (min-width: 991px)  {
+    #imagen_logo{
+      max-width: 15%;
+      padding: 0%;
+      position: absolute;
+      left: 12px;
+      top: 48px;
+    }
+  }
+
+  @media only screen and (max-width: 460px){
+    #telefono_header{
+      position:absolute;
+      top: 25%;
+      right: 10%;
+    }
+
+    #clase_reforzamiento_header{
+      position:absolute;
+      right: 12%;
+      top: 20%;
+      color: #126087 !important;
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) and (min-width: 460px) {
+    #telefono_header{
+      position:absolute;
+      top: 30%;
+      right: 8%;
+    }
+
+    #clase_reforzamiento_header{
+      position:absolute;
+      right: 4%;
+      top: 21%;
+      color: #126087 !important;
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: 600px)  {
+    #telefono_header{
+      position:absolute;
+      top: 20%;
+      right: 8%;
+    }
+
+    #clase_reforzamiento_header{
+      position:absolute;
+      right: 4%;
+      top: 11%;
+      color: #126087 !important;
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 600px) and (min-width: 460px) {
+    #contenedor_header{
+      padding-top: 120px;
+    }
+  }
+
+  @media only screen and (max-width: 460px){
+    #contenedor_header{
+      padding-top: 60px;  
+    }
+
+    #titulo_academia{
+      line-height: 1.1em !important;
+    }
+  }
+
   </style>
 
 </head>
@@ -159,13 +258,13 @@
     <br>
     <br>
     <br>
-    <h3 style="position:absolute; top: 20%; right: 8%;" class="text-white">Contactanos: 6265-3105</h3>
-    <a style="position:absolute; right: 4%;top: 11%; color: #126087 !important; font-size: 1rem;" class="btn btn-light btn-xl" href="">¡Clase reforzamiento de Matemáticas!</a>
-    <img style="    max-width: 15%;padding: 0%;position: absolute;left: 12px;top: 48px;" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_TEST.png') }}" alt="">
-    <div class="container h-100">
+    <h3 id="telefono_header" class="text-white">Contactanos: 6265-3105</h3>
+    <a id="clase_reforzamiento_header" class="btn btn-light btn-xl" href="">¡Clase reforzamiento de Matemáticas!</a>
+    <img id="imagen_logo" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_TEST.png') }}" alt="">
+    <div id="contenedor_header" class="container h-100">
       <div class="row h-100 align-items-center justify-content-center">
         <div class="col-lg-8 align-self-end">
-          <h1 class="elementor-heading-title text-white texto_general">Academia de <br>Robotica para <br>Niños</h1>
+          <h1 id="titulo_academia" class="elementor-heading-title text-white texto_general">Academia de <br>Robotica para <br>Niños</h1>
           <h1 class="text-white subtitulo texto_general">Aprende y divierte con nosotros</h1>
           <hr class="divider my-4">
         </div>
@@ -338,8 +437,8 @@
             <br>
             <ul class="list-group fuente_propia" style="text-align:left;">
               <li class="list-group-item list-group-item-warning">Los estudiantes eligirán engranajes, motores y conectarán cables</li>
-              <li class="list-group-item list-group-item-warning">Escribarán programas aplicnado ortografía y lenguaje</li>
-              <li class="list-group-item list-group-item-warning">Aplicanrán ciencias y matemáticas, electricidad, diseño de ingeniería </li>
+              <li class="list-group-item list-group-item-warning">Escribarán programas aplicando ortografía y lenguaje</li>
+              <li class="list-group-item list-group-item-warning">Aplicanrán ciencias, matemáticas, electricidad y diseño de ingeniería</li>
             </ul>
           </div>
         </div>
@@ -515,12 +614,76 @@
           Cada nivel tiene una duración de <span style="text-transform: uppercase; font-weight: bold;">3 meses</span>
           </p>
         </div>
+        <br>
+        <br>
+        <h2 style="font-size: 4rem; font-weight: 700; color: #f4623a!important;" class="text-center">Veamos el costo . . .</h2>
 
     </div>
   </section>
 
+  <section class="page-section divisor divisor_seccion_7">
+  </section>
+
+  <section class="page-section-local" id="precios">
+    <div class="container">
+      <h1 class="text-center texto_general text-muted titulo_seccion_1">¿Cuanto cuesta?</h1>
+      <br>
+      <h3 class="text-center sub-titulo-seccion_1">Inclye reforzamiento de Matemáticas  . . .</h3>
+      <hr class="divider my-4">
+      <ul class="list-group fuente_propia" style="text-align:left;padding-right:10%; padding-left:10%;">
+        <li class="list-group-item list-group-item-info"><span style="text-transform: uppercase; font-weight: bold;">Nuestros cobros son mensuales</span></li>
+        <li class="list-group-item list-group-item-info"><span style="text-transform: uppercase; font-weight: bold;">Ofrecemos facilidad de pago por cuotas</span></li>
+      </ul>
+      <br>
+      <br>
+      <h3 class="text-center">Detalle Primer Mes</h3>
+      <br>
+
+      <div style="padding-right:10%; padding-left:10%;">
+        <table class="table">
+          <thead class="thead-dark fuente_propia">
+            <tr>
+              <th class="fuente_propia" scope="col">#</th>
+              <th class="fuente_propia" scope="col"><span style="text-transform: uppercase; font-weight: bold;">Concepto</span></th>
+              <th class="fuente_propia" scope="col"><span style="text-transform: uppercase; font-weight: bold;">Precio</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td class="fuente_propia">Precio Inscripción</td>
+              <td class="fuente_propia"><span style="text-transform: uppercase; font-weight: bold;">$15.00</span></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td class="fuente_propia">Precio Mensualidad <span style="text-transform: uppercase; font-weight: bold;">(Incluye 8 clases al mes)</span></td>
+              <td class="fuente_propia"><span style="text-transform: uppercase; font-weight: bold;">$20.00</span></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td class="fuente_propia" style="text-align: right;"><span style="text-transform: uppercase; font-weight: bold;">Total</span></td>
+              <td class="fuente_propia"><span style="text-transform: uppercase; font-weight: bold;">$ 35.00</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <ul class="list-group fuente_propia" style="text-align:left;padding-right:10%; padding-left:10%;">
+        <li class="list-group-item list-group-item-info"><span style="text-transform: uppercase; font-weight: bold;">Luego del primer mes el cobro regular es de $35.00 por mes</span></li>
+        <li class="list-group-item list-group-item-info"><span style="text-transform: uppercase; font-weight: bold;">Incluye 8 clases al mes</span></li>
+      </ul>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <h4 style="font-size: 4rem; font-weight: 700; color: #f4623a!important;" class="text-center">Hablemos de la solución . . .</h4>
+    </div>
+  </section>
 
   <section class="page-section divisor divisor_seccion_6">
+  </section>
+  <section class="page-section divisor divisor_seccion_1">
   </section>
 
   <br>
