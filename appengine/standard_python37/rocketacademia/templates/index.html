@@ -51,6 +51,10 @@
     background: url({{ url_for('static', filename='separador_seccion_7.png') }});
   }
 
+  .divisor_seccion_8 {
+    background: url({{ url_for('static', filename='separador_seccion_ubicacion.png') }});
+  }
+
   .divisor {
     padding-top: 12%;
     padding-bottom: calc(10rem - 72px);
@@ -246,40 +250,53 @@
   @media only screen and (max-width: 460px){
 
     #boton_correo{
-      background: #9bc5d8de !important; font-size:1rem;
+      background: #9bc5d8de !important; font-size:0.9rem;
     }
 
-    #contenedor_icono_telefono{
-      text-align: center;
-    }
-
-    #contenedor_telefono{
-      text-align: center;
-    }
-
-    #contenedor_icono_correo{
-      text-align: center;
-    }
   }
 
   @media only screen and (min-width: 460px){
 
     #boton_correo{
-      background: #9bc5d8de !important; font-size:1.5rem;
+      background: #9bc5d8de !important; font-size:1rem;
     }
 
-    #contenedor_icono_telefono{
-      text-align: right;
-    }
+  }
 
-    #contenedor_telefono{
-      text-align: right;
-    }
+  @media only screen and (max-width: 460px){
 
-    #contenedor_icono_correo{
-      text-align: right;
+    #boton_buscar_mapa{
+      background: #9bc5d8de !important; font-size:0.9rem;
     }
   }
+
+  @media only screen and (min-width: 460px){
+
+    #boton_buscar_mapa{
+      background: #9bc5d8de !important; font-size:1.5rem;
+    }
+  }
+
+  #boton_telefono{
+    background: #9bc5d8de !important; font-size:1.5rem;
+  }
+
+  #contenedor_icono_telefono{
+    text-align: center;
+  }
+
+  #contenedor_telefono{
+    text-align: center;
+  }
+
+  #contenedor_icono_correo{
+    text-align: center;
+  }
+
+  #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
 
   </style>
 
@@ -539,8 +556,6 @@
   <section class="page-section divisor divisor_seccion_2">
   </section>
 
-
-
   <!-- Services Section -->
   <section class="page-section" id="services">
       <div class="container">
@@ -711,7 +726,7 @@
     <div class="container">
       <h1 class="text-center texto_general text-muted titulo_seccion">¿Cuanto cuesta?</h1>
       <br>
-      <h3 class="text-center sub-titulo-seccion">Inclye reforzamiento de Matemáticas  . . .</h3>
+      <h3 class="text-center sub-titulo-seccion">Incluye reforzamiento de Matemáticas  . . .</h3>
       <hr class="divider my-4">
       <ul class="list-group fuente_propia" style="text-align:left;padding-right:10%; padding-left:10%;">
         <li class="list-group-item list-group-item-info"><span style="text-transform: uppercase; font-weight: bold;">Nuestros cobros son mensuales</span></li>
@@ -760,7 +775,43 @@
       <br>
       <br>
       <br>
-      <h4 class="text-center titulo_pie_seccion">Hablemos de la solución . . .</h4>
+      <h4 class="text-center titulo_pie_seccion"> ¿Dónde estamos ubicados?  . . . </h4>
+    </div>
+  </section>
+
+  <section class="page-section divisor divisor_seccion_8">
+  </section>
+
+  <section class="page-section-local" id="precios">
+    <div class="container">
+      <h1 class="text-center texto_general text-muted titulo_seccion">Una academia para los niños Chiricanos</h1>
+      <br>
+      <h3 class="text-center sub-titulo-seccion">En el Centro de David  . . .</h3>
+      <hr class="divider my-4">
+      <br>
+      <br>
+      <h3 class="" style="line-height: 3.5rem; text-align: justify;">
+            Estamos ubicados en las instalaciones de la escuela <span class="negrita_mayuscula">el buen pastor Doleguita</span>, a un costado de
+            <span class="negrita_mayuscula">la escula de Doleguita</span>.
+      </h3>
+      <a id="boton_buscar_mapa" href="https://www.google.com/maps/place/El+Buen+Pastor+Doleguita/@8.4402117,-82.4265978,15z/data=!4m5!3m4!1s0x0:0x746314e0a31974bf!8m2!3d8.4402117!4d-82.4265978" class="btn btn-xl">
+        <img style="width: 12%;" class="img-fluid img-datos" src="{{ url_for('static', filename='mapa.png') }}" alt="">
+        <span>Obtener dirección </span>
+      </a>
+      <br>
+      <br>
+  </div>
+  <div class="container-fluid">
+    <div id="map"></div>
+  </div>
+  <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h4 class="text-center titulo_pie_seccion">¿Y quién es el facilitador?  . . .</h4>
     </div>
   </section>
 
@@ -807,8 +858,6 @@
     </div>
   </div>
 
-
-
   <!-- Contact Section -->
   <section class="page-section" id="contact">
     <div class="container">
@@ -822,19 +871,19 @@
       <br>
       <br>
       <div class="row">
-        <div id="contenedor_icono_telefono" class="col-lg-5 ml-auto fuente_propia">
-          <img style="width: 30%;" class="img-fluid img-datos" src="{{ url_for('static', filename='telefono.png') }}" alt="">
-        </div>
-        <div id="contenedor_telefono" class="col-lg-7 mr-auto fuente_propia" style="padding-top: 20px;">
-          <a id="boton_telefono" style="background: #9bc5d8de !important; font-size:1.5rem;" href="tel:6265-3105" class="btn btn-xl" href="">6265-3105</a>
+        <div id="contenedor_telefono" class="col-lg-12 mr-auto fuente_propia" style="padding-top: 20px;">
+          <a id="boton_telefono"  href="tel:6265-3105" class="btn btn-xl" href="">
+            <img href="tel:6265-3105" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='telefono.png') }}" alt="">
+            <span>6265-3105</span>
+          </a>
         </div>
       </div>
       <div class="row">
-        <div id="contenedor_icono_correo" class="col-lg-5 ml-auto fuente_propia">
-          <img id="icono_correo" style="width: 30%;" class="img-fluid img-datos" src="{{ url_for('static', filename='mail.png') }}" alt="">
-        </div>
-        <div class="col-lg-7 mr-auto fuente_propia" style="padding-top: 20px;">
-          <a id="boton_correo" style="" href="mailto:academiarocket@gmail.com" class="btn btn-xl" href="">academiarocket@gmail.com</a>
+        <div class="col-lg-12 mr-auto fuente_propia text-center" style="padding-top: 20px;">
+          <a id="boton_correo" style="" href="mailto:academiarocket@gmail.com" class="btn btn-xl">
+            <img id="icono_correo" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='mail.png') }}" alt="">
+            <span>academiarocket@gmail.com</span>
+          </a>
         </div>
       </div>
     </div>
@@ -846,6 +895,18 @@
       <img style="width:17%" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_OFICIAL.png') }}" alt=""> <span class="small text-center text-muted">Copyright &copy; 2020 - Academia Rocket</span>
     </div>
   </footer>
+
+
+  <script>
+    function initMap() {
+      var uluru = {lat: 8.4402117, lng: -82.4265978};
+      var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 16, center: uluru});
+      var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwHveT7Y6nz_D8FygbSm-R4GiXyiHoB4Q&callback=initMap"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
