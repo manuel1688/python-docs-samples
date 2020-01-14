@@ -251,6 +251,8 @@
 
     #boton_correo{
       background: #9bc5d8de !important; font-size:0.9rem;
+      text-transform: none;
+      font-weight: bold;
     }
 
   }
@@ -258,7 +260,9 @@
   @media only screen and (min-width: 460px){
 
     #boton_correo{
-      background: #9bc5d8de !important; font-size:1rem;
+      background: #9bc5d8de !important; font-size:1.4rem;
+      text-transform: none;
+      font-weight: bold;
     }
 
   }
@@ -274,11 +278,24 @@
 
     #boton_buscar_mapa{
       background: #9bc5d8de !important; font-size:1.5rem;
+      width: 60%;
     }
   }
 
   #boton_telefono{
     background: #9bc5d8de !important; font-size:1.5rem;
+  }
+
+  #boton_instagram{
+    background: #9bc5d8de !important; font-size:1.5rem;
+    text-transform: none;
+    font-weight: bold;
+  }
+
+  #boton_facebook{
+    background: #9bc5d8de !important; font-size:1.5rem;
+    text-transform: none;
+    font-weight: bold;
   }
 
   #contenedor_icono_telefono{
@@ -321,7 +338,16 @@
             <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portafolio</a>
+            <a class="nav-link js-scroll-trigger" href="#levels">Edades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#academy">Academia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#price">Precios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#location">Ubicación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contactanos</a>
@@ -337,7 +363,8 @@
     <br>
     <br>
     <h3 id="telefono_header" class="text-white">Contactanos: 6265-3105</h3>
-    <a id="clase_reforzamiento_header" class="btn btn-light btn-xl" href="">¡Clase reforzamiento de Matemáticas!</a>
+
+    <a id="clase_reforzamiento_header" class="btn btn-light btn-xl nav-link js-scroll-trigger" href="#contact" href="">¡Clase reforzamiento de Matemáticas!</a>
     <img id="imagen_logo" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_TEST.png') }}" alt="">
     <div id="contenedor_header" class="container h-100">
       <div class="row h-100 align-items-center justify-content-center">
@@ -356,6 +383,25 @@
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <div class="container h-100">
+      <div class="row text-white fuente_propia">
+        <div class="col-lg-4">
+          <img id="icono_correo" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='gmail.png') }}" alt="">
+          <span>academiarocket@gmail.com</span>
+        </div>
+        <div class="col-lg-4">
+          <img id="icono_correo" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='instagram.png') }}" alt="">
+          <span>@academia_rocket</span>
+        </div>
+        <div class="col-lg-4">
+          <img id="icono_correo" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='facebook.png') }}" alt="">
+          <span>Academia Rocket</span>
+        </div>
+      </div>
+    </div>
+
   </header>
 
 
@@ -614,7 +660,7 @@
     </div>
   </section>
 
-  <section id="portfolio">
+  <section id="academy">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
@@ -641,7 +687,7 @@
 
   <br>
   <br>
-  <section id="academia">
+  <section id="levels">
     <div class="container">
 
       <h2 class="text-center texto_general text-muted titulo_seccion">Clases de acuerdo a las edades</h2>
@@ -714,7 +760,7 @@
         </div>
         <br>
         <br>
-        <h2 class="text-center titulo_pie_seccion">Veamos el costo . . .</h2>
+        <h2 class="text-center titulo_pie_seccion">Veamos el precio . . .</h2>
 
     </div>
   </section>
@@ -722,9 +768,9 @@
   <section class="page-section divisor divisor_seccion_7">
   </section>
 
-  <section class="page-section-local" id="precios">
+  <section class="page-section-local" id="price">
     <div class="container">
-      <h1 class="text-center texto_general text-muted titulo_seccion">¿Cuanto cuesta?</h1>
+      <h1 class="text-center texto_general text-muted titulo_seccion">¿Cuánto cuesta?</h1>
       <br>
       <h3 class="text-center sub-titulo-seccion">Incluye reforzamiento de Matemáticas  . . .</h3>
       <hr class="divider my-4">
@@ -782,8 +828,8 @@
   <section class="page-section divisor divisor_seccion_8">
   </section>
 
-  <section class="page-section-local" id="precios">
-    <div class="container">
+  <section class="page-section-local" id="location">
+    <div class="container text-center">
       <h1 class="text-center texto_general text-muted titulo_seccion">Una academia para los niños Chiricanos</h1>
       <br>
       <h3 class="text-center sub-titulo-seccion">En el Centro de David  . . .</h3>
@@ -794,10 +840,14 @@
             Estamos ubicados en las instalaciones de la escuela <span class="negrita_mayuscula">el buen pastor Doleguita</span>, a un costado de
             <span class="negrita_mayuscula">la escula de Doleguita</span>.
       </h3>
+      <br>
+      <br>
       <a id="boton_buscar_mapa" href="https://www.google.com/maps/place/El+Buen+Pastor+Doleguita/@8.4402117,-82.4265978,15z/data=!4m5!3m4!1s0x0:0x746314e0a31974bf!8m2!3d8.4402117!4d-82.4265978" class="btn btn-xl">
         <img style="width: 12%;" class="img-fluid img-datos" src="{{ url_for('static', filename='mapa.png') }}" alt="">
         <span>Obtener dirección </span>
       </a>
+      <br>
+      <br>
       <br>
       <br>
   </div>
@@ -883,6 +933,22 @@
           <a id="boton_correo" style="" href="mailto:academiarocket@gmail.com" class="btn btn-xl">
             <img id="icono_correo" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='mail.png') }}" alt="">
             <span>academiarocket@gmail.com</span>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div id="contenedor_telefono" class="col-lg-12 mr-auto fuente_propia" style="padding-top: 20px;">
+          <a id="boton_instagram"  href="https://www.instagram.com/academia_rocket/" class="btn btn-xl">
+            <img style="width: 10%;" class="img-fluid img-datos" src="{{ url_for('static', filename='instagram.png') }}" alt="">
+            <span>@academia_rocket</span>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div id="contenedor_telefono" class="col-lg-12 mr-auto fuente_propia" style="padding-top: 20px;">
+          <a id="boton_facebook" class="btn btn-xl" href="https://www.facebook.com/Academia-rocket-103576284488078/">
+            <img style="width: 10%;" class="img-fluid img-datos" src="{{ url_for('static', filename='facebook.png') }}" alt="">
+            <span>Academia Rocket</span>
           </a>
         </div>
       </div>
