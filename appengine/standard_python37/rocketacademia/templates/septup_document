@@ -8,3 +8,9 @@ Run the application:
  python main.py
 In your web browser, enter the following address:
  http://localhost:8080
+
+ Deploy ---  ir al directorio del proyecto
+
+ gcloud app deploy
+
+ gcloud app browse
