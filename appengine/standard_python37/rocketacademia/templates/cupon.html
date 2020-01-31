@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Rocket Academia</title>
+
+  <!-- Font Awesome Icons -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='all.min.css') }}">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='magnific-popup.css') }}">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='creative.min.css') }}">
+
+  <style>
+
+
+  .fuente_propia{
+    font-family: "Merriweather Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+
+  .fuente_grande{
+    font-size: 1.5rem;
+  }
+
+  .negrita_mayuscula{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .masthead2 {
+    padding-top: 1rem !important;
+    padding-bottom: calc(10rem - 72px) !important;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0) 0,#0c5460 0,rgba(0,0,0,.075) 100%),url(/static/LOGO_ROCKET_FONDO.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+
+  .vertical-center {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media only screen and (max-width: 780px){
+  #contenedor_registro{
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  #contenedor_registro{
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 460px){
+
+  #boton_buscar_mapa{
+    background: #9bc5d8de !important; font-size:0.9rem;
+  }
+}
+
+@media only screen and (min-width: 460px){
+
+  #boton_buscar_mapa{
+    background: #9bc5d8de !important; font-size:1.5rem;
+    width: 42%;
+  }
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+</style>
+
+</head>
+
+<body>
+<br>
+<div class="container" style="background-color: white !important;">
+  <div class="row">
+    <div class="col-lg-4 text-center">
+      <a class="btn btn-secondary" href="/" role="button">Ir a la página de Inicio</a>
+    </div>
+    <div class="col-lg-8 text-center">
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container masthead2" style="border-radius: 20px;">
+  <div class="row no-gutters">
+    <div class="col-lg-12 col-sm-12 text-center">
+      <br>
+      <p style="font-size: 2rem;" class="text-white fuente_propia">
+        <span class="negrita_mayuscula" style="font-size:3rem;">¡Felicidades!</span><br>
+        <span class="negrita_mayuscula" style="color:#ffc107;">{{ nombre }}</span>
+        <br> has obtenido un cupón con
+        <span style="font-size:3rem;color:#ffc107;" class="negrita_mayuscula">25%</span>
+        de descuento <br>en nuestra academia. Puedes contactarnos al:<br><br>
+        <a class="btn btn-light" href="tel:6265-3105" role="button">
+          <img href="tel:6265-3105" style="width: 20%;" class="img-fluid img-datos" src="{{ url_for('static', filename='telefono.png') }}" alt="">
+          <span class="fuente_propia" style="font-size:2rem;">6265-3105</span>
+        </a>
+        <br><br>o presentarte en nuestras instalaciones.
+      </p>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container text-center">
+  <h3 class="" style="line-height: 3.5rem; text-align: justify;">
+  Estamos ubicados en las instalaciones de la escuela <span class="negrita_mayuscula">el buen pastor Doleguita</span>, a un costado de
+  <span class="negrita_mayuscula">la escuela de Doleguita</span>.
+  </h3>
+  <br>
+  <br>
+  <a id="boton_buscar_mapa" href="https://www.google.com/maps/place/El+Buen+Pastor+Doleguita/@8.4402117,-82.4265978,15z/data=!4m5!3m4!1s0x0:0x746314e0a31974bf!8m2!3d8.4402117!4d-82.4265978" class="btn btn-xl">
+    <img style="width: 10%;" class="img-fluid img-datos" src="{{ url_for('static', filename='mapa.png') }}" alt="">
+    <span>Obtener dirección </span>
+  </a>
+  <br><br>
+</div>
+<div class="container-fluid">
+<div id="map"></div>
+<small class="fuente_propia" style="color:black;">*El cupón se hace valido al matricularse en nuesta academia. </small>
+</div>
+</body>
+
+<footer class="text-center">
+  <div class="container-fluid">
+    <img style="width:5%" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_OFICIAL.png') }}" alt=""> <span class="small text-center text-muted">Copyright &copy; 2020 - Academia Rocket</span>
+  </div>
+</footer>
+
+<br>
+<br>
+
+<script>
+  function initMap() {
+    var uluru = {lat: 8.4402117, lng: -82.4265978};
+    var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 16, center: uluru});
+    var marker = new google.maps.Marker({position: uluru, map: map});
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwHveT7Y6nz_D8FygbSm-R4GiXyiHoB4Q&callback=initMap"></script>
+
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+
+</body>
+
+</html>

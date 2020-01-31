@@ -4,6 +4,7 @@ Create an isolated Python environment in a directory external to your project an
 Navigate to your project directory and install dependencies:
  cd YOUR_PROJECT
  pip install  -r requirements.txt
+
 Run the application:
  python main.py
 In your web browser, enter the following address:

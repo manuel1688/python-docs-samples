@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Rocket Academia</title>
+
+  <!-- Font Awesome Icons -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='all.min.css') }}">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='magnific-popup.css') }}">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='creative.min.css') }}">
+
+  <style>
+
+
+  .fuente_propia{
+    font-family: "Merriweather Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+
+  .fuente_grande{
+    font-size: 1.5rem;
+  }
+
+  .negrita_mayuscula{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .masthead2 {
+    padding-top: 1rem !important;
+    padding-bottom: calc(10rem - 72px) !important;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0) 0,#0c5460 0,rgba(0,0,0,.075) 100%),url(/static/LOGO_ROCKET_FONDO.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+
+  .vertical-center {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media only screen and (max-width: 780px){
+  #contenedor_registro{
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  #contenedor_registro{
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+}
+
+  </style>
+
+</head>
+
+<body>
+  <br>
+    <div class="container" style="background-color: white !important;">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <a class="btn btn-secondary" href="/" role="button">Ir a la página de Inicio</a>
+        </div>
+        <div class="col-lg-8 text-center">
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container" style="background-color: white !important;">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img style="width:60%" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_OFICIAL.png') }}" alt="">
+        </div>
+        <div class="col-lg-8 vertical-center fuente_propia">
+          <ul class="list-group fuente_propia" style="text-align: justify; width:100%;">
+              <li class="list-group-item list-group-item-info text-center" style="font-weight: bold; color:black;">Obtén un <span style="text-transform: uppercase; font-weight: bold; color:#dc3545; font-size:1.1rem;">cupón de Descuento gratis</span> para:</li>
+              <li class="list-group-item list-group-item-warning" style="color: black !important;"><span style="text-transform: uppercase; font-weight: bold; color: black !important;">Clases de Robótica</span></li>
+              <li class="list-group-item list-group-item-warning" style="color: black !important;">Edades de <span style="text-transform: uppercase; font-weight: bold; color: black !important;">8 años en adelante</span></li>
+              <li class="list-group-item list-group-item-warning" style="color: black !important;">Ofrecemos <span style="text-transform: uppercase; font-weight: bold; color: black !important;">facilidad de Pago y Horarios flexibles.</span></li>
+              <li class="list-group-item list-group-item-warning" style="color: black !important;">Ubicados en <span style="text-transform: uppercase; font-weight: bold; color: black !important;"><span style="font-size:1rem;" class="negrita_mayuscula">David Chiriquí.</span></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+  <div class="container masthead2" style="border-radius: 20px;">
+    <div class="row no-gutters">
+      <div class="col-lg-12 col-sm-12 text-center">
+      <br>
+      <p style="font-size: 2rem;" class="text-white fuente_propia"><span class="negrita_mayuscula" style="color:#ffc107;">¡Registrate gratis!</span>,
+      y obtén un cupón con <span style="font-size:3rem;color:#ffc107;" class="negrita_mayuscula">25%</span> de descuento. </p>
+      </div>
+    </div>
+    <br>
+    <form action="/obtener/descuento" method="post" id="contenedor_registro" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label class="fuente_propia text-white fuente_grande" for="validationCustom012">Nombre</label>
+        <input name="nombre" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" id="validationCustom012" required>
+        <div style="color:#ffc107;" class="invalid-feedback">
+          Por favor, ingresar su nombre.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="fuente_propia text-white fuente_grande" for="validationCustom022">Correo</label>
+        <input name="correo" type="email" class="form-control" id="exampleInputPassword1" required>
+        <div style="color:#5ade78;" class="valid-feedback">
+          ¡Correo electrónico valido!
+        </div>
+        <div style="color:#ffc107;" class="invalid-feedback">
+          Por favor, ingresar un correo electrónico valido.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="fuente_propia text-white fuente_grande" for="validationCustomUsername2">Teléfono</label>
+        <input name="telefono" type="tel" class="form-control" id="exampleInputPassword1" pattern="[0-9]{8}"
+       required><small style="color:#f8f9fa;">Ejemplo: 62653105 (solo números)</small>
+       <div style="color:#5ade78;" class="valid-feedback">
+         ¡Teléfono valido!
+       </div>
+        <div style="color:#ffc107;" class="invalid-feedback">
+          Por favor, ingresar un télefono con solo números.
+        </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary fuente_propia text-white fuente_grande text-center" style="background-color: #28a745 !important; border-color: #28a745 !important;">
+          Registrar
+        </button>
+      </div>
+    </form>
+  </div>
+  <br>
+  <br>
+</body>
+
+
+<footer class="text-center">
+  <div class="container-fluid">
+    <img style="width:5%" class="img-fluid img-datos" src="{{ url_for('static', filename='LOGO_OFICIAL.png') }}" alt=""> <span class="small text-center text-muted">Copyright &copy; 2020 - Academia Rocket</span>
+  </div>
+</footer>
+
+<br>
+<br>
+
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='jquery.easing.min.js') }}"></script>
+<script src="{{ url_for('static', filename='jquery.magnific-popup.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='creative.min.js') }}"></script>
+
+<script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+
+</body>
+
+</html>
